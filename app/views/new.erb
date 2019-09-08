@@ -1,13 +1,17 @@
-<form action="/recipess" method="post">
+<form action="/recipes" method="post">
   <ul>
     <li>
-      <label for="title">Title</label>
-      <input id="title" type="text" name="title" />
+      <label for="name">Name</label>
+      <input id="name" type="text" name="recipe[name]" />
     </li>
     <li>
-      <label for="content">Content</label>
-      <textarea id="content" type="text" name="content">
+      <label for="ingredients">Ingredients</label>
+      <textarea id="ingredients" type="text" name="recipe">
       </textarea>
+    </li>
+    <li>
+      <label for="cook_time">Cook_time</label>
+      <input id="cook_time" type="text" name="recipe" />
     </li>
   </ul>
   <input type="submit" />
