@@ -15,6 +15,11 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+  get "/recipes/:id/edit" do
+    @recipe = Recipe.find(params[:id])
+    erb :edit
+  end
+
   get "/recipes/new" do
     @recipe = Recipe.new
     erb :new
@@ -23,11 +28,6 @@ class ApplicationController < Sinatra::Base
   post "/recipes" do
     @recipe = Recipe.create(params)
     redirect to "/recipes/#{ @recipe.id }"
-  end
-
-  get "/recipes/:id/edit" do
-    @recipe = Recipe.find(params[:id])
-    erb :edit
   end
 
   patch "/recipes/:id" do
