@@ -35,17 +35,12 @@ class ApplicationController < Sinatra::Base
     redirect to "/recipes/#{ @recipe.id }"
   end
 
-
-
-
-
-  # update
+ # update
   patch "/recipes/:id" do
     @recipe = Recipe.find(params[:id])
     @recipe.update(params[:recipe])
     redirect to "/recipes/#{ @recipe.id }"
   end
-
 
   delete "/recipes/:id" do
     Recipe.destroy(params[:id])
